@@ -14,7 +14,7 @@ namespace Jogatina.Repositorio.Repositorio
             _connectionString = stringConnect;
         }
 
-        public abstract void add(T model);
+        public abstract void Incluir(T model);
         public abstract void Remove(int id);
         public abstract void Atualizar(T item);
         public abstract T BuscarPorId(Guid id);

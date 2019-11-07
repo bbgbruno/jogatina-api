@@ -10,5 +10,6 @@ namespace Jogatina.Dominio.Modelos
         public string Nome { get; set; }
         public string Email { get; set; }
         public string UrlFoto { get; set; }
+        public string Senha { get; set; }
     }
 }
