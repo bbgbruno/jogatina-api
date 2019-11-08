@@ -5,7 +5,7 @@ namespace Genius.Migrations.Schemas
     [Migration(2)]
     public class AddUsuario : Migration
     {
-        readonly string TableName = "Usuarios";    
+        readonly string TableName = "Jogador";    
 
         public override void Down()
         {
@@ -17,18 +17,17 @@ namespace Genius.Migrations.Schemas
             if (!Schema.Schema("dbo").Table(TableName).Exists())
             {
                 Create.Table(TableName)
-                .WithColumn("UsuarioId").AsGuid().PrimaryKey()
+                .WithColumn("JogadorId").AsGuid().PrimaryKey()
                 .WithColumn("Nome").AsString(255)
-                .WithColumn("TipoUsuarioId").AsGuid()
                 .WithColumn("Email").AsString(255)                
                 .WithColumn("Senha").AsString(30)                
-                .WithColumn("Status").AsInt32()                
+                .WithColumn("UriFoto").AsInt32()                
                 .WithColumn("Telefone").AsString(50);             
             }
 
-            Create.ForeignKey()
-                  .FromTable(TableName).ForeignColumn("TipoUsuarioId")
-                  .ToTable("TipoUsuario").PrimaryColumn("TipoUsuarioId");            
+            //Create.ForeignKey()
+            //      .FromTable(TableName).ForeignColumn("TipoUsuarioId")
+            //      .ToTable("TipoUsuario").PrimaryColumn("TipoUsuarioId");            
         }
     }
 }
